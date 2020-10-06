@@ -26,5 +26,7 @@
 
     <!-- Run rviz-->>
     <node pkg="rviz" type="rviz" name="rviz" required="true" args="-d $(find comp3431_ass1)/rviz/rviz2.rviz"/>
-
+    <!--Position-->>
+    <node pkg="scripts" type="run.py" 
+          name="listener" />
 </launch>
