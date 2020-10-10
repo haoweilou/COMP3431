@@ -1,4 +1,3 @@
 <launch>
-    <node pkg="comp3431_ass1" type="run.py" 
-          name="listener" output="screen"/>
+     <node pkg="comp3431_ass1" name="comp3431_ass1_overall" type="overall.py" output="screen"/>
 </launch>

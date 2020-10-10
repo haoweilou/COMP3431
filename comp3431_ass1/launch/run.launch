@@ -11,8 +11,7 @@
     <!-- Wall-follower -->>
     <include file="$(find comp3431_starter)/launch/wallFollow.launch">
     </include>
-
-    <!-- Map server -->
+    
     <node pkg="map_server" name="map_server" type="map_server" args="$(find turtlebot3_navigation)/maps/map.yaml"/>
 
     <!-- AMCL -->
@@ -26,7 +25,5 @@
 
     <!-- Run rviz-->>
     <node pkg="rviz" type="rviz" name="rviz" required="true" args="-d $(find comp3431_ass1)/rviz/rviz2.rviz"/>
-    <!--Position-->>
-    <node pkg="scripts" type="run.py" 
-          name="listener" />
+
 </launch>
