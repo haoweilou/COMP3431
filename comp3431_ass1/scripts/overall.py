@@ -7,6 +7,7 @@ import actionlib
 from std_msgs.msg import String
 from geometry_msgs.msg import PoseStamped
 from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal
+
 #initialise launch file and get initial pose & position
 def exploreStart():
     rospy.init_node('en_Mapping', anonymous=True,disable_signals=True)
@@ -61,11 +62,22 @@ def backToInitialGoal(position):
     client.send_goal(goal)
     client.wait_for_result()
 
+endcondition = None
+def callback(data):
+    global endcondition
+    endcondition = data.data
+    #rospy.loginfo(endcondition.data)
+
 if __name__ == "__main__":
     initial_pose = exploreStart()
     navigation()
     startRun()
-    while True:
-        print("Running")
-    except KeyboardInterrupt:
-        backToInitialGoal(initial_pose)
+    string = ''
+    while string != 'stop':
+        command = rospy.Subscriber("/cmd", String, callback)
+        global endcondition
+        string = endcondition
+        print(string)
+
+    backToInitialGoal(initial_pose)
+    rospy.spin()
