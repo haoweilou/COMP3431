@@ -10,7 +10,7 @@ from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal
 
 #initialise launch file and get initial pose & position
 def exploreStart():
-    rospy.init_node('en_Mapping', anonymous=True,disable_signals=True)
+    rospy.init_node('Lang', anonymous=True)
     uuid = roslaunch.rlutil.get_or_generate_uuid(None, False)
     roslaunch.configure_logging(uuid)
     explore = ['comp3431_ass1', 'explore.launch']
