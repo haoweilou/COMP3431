@@ -71,13 +71,12 @@ def callback(data):
 if __name__ == "__main__":
     initial_pose = exploreStart()
     navigation()
-    startRun()
+    #startRun()
     string = ''
     while string != 'stop':
         command = rospy.Subscriber("/cmd", String, callback)
         global endcondition
         string = endcondition
-        print(string)
-
+    print('stop')
     backToInitialGoal(initial_pose)
     rospy.spin()
