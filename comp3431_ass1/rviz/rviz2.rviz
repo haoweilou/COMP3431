@@ -7,6 +7,7 @@ Panels:
         - /TF1/Frames1
         - /TF1/Tree1
         - /Image1
+        - /Map1
         - /Global Map1/Costmap1
         - /Global Map1/Planner1
         - /Local Map1/Polygon1
@@ -14,6 +15,7 @@ Panels:
         - /Local Map1/Planner1
         - /Odometry1
         - /Odometry1/Shape1
+        - /Marker1
       Splitter Ratio: 0.5
     Tree Height: 399
   - Class: rviz/Selection
@@ -364,10 +366,10 @@ Visualization Manager:
       Value: true
     - Class: rviz/Marker
       Enabled: true
-      Marker Topic: /ARmarker_points
+      Marker Topic: /visualization_marker
       Name: Marker
       Namespaces:
-        {}
+        basic_shapes: true
       Queue Size: 100
       Value: true
   Enabled: true
@@ -403,7 +405,7 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Scale: 100
+      Scale: 110.38719940185547
       Target Frame: <Fixed Frame>
       Value: TopDownOrtho (rviz)
       X: 0

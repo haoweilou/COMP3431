@@ -76,6 +76,7 @@ if __name__ == "__main__":
     while string != 'stop':
         command = rospy.Subscriber("/cmd", String, callback)
         global endcondition
+        print(string)
         string = endcondition
     print('stop')
     backToInitialGoal(initial_pose)
